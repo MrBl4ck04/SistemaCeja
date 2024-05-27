@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var modoEdicion = false;
 
+    // Escala de la imagen en km por pixel (esto debe ser ajustado según la escala de tu imagen)
+    var scaleKmPerPixel = 0.013; // Ejemplo: 1 pixel = 0.013 km
+
     function cambiarModoEdicion() {
         modoEdicion = !modoEdicion;
         paper.setInteractivity(function(cellView) {
@@ -105,12 +108,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     paper.on('link:connect', function(linkView) {
-        var attribute = prompt('Ingrese el atributo numérico para la arista:');
-        if (attribute && !isNaN(parseFloat(attribute)) && isFinite(attribute)) {
+        var sourceElement = linkView.model.getSourceElement();
+        var targetElement = linkView.model.getTargetElement();
+        if (sourceElement && targetElement) {
+            var sourcePosition = sourceElement.position();
+            var targetPosition = targetElement.position();
+            var distancePixels = Math.sqrt(Math.pow(targetPosition.x - sourcePosition.x, 2) + Math.pow(targetPosition.y - sourcePosition.y, 2));
+            var distanceKm = (distancePixels * scaleKmPerPixel).toFixed(1);
+
             linkView.model.label(0, { 
                 attrs: { 
                     text: { 
-                        text: attribute,
+                        text: distanceKm,
                         fontWeight: 'bold',
                         fill: document.getElementById('cambiarColorTextoBtn').value, 
                         fontSize: 16,
