@@ -137,7 +137,13 @@ body{
     line-height: 20px;
     letter-spacing: 0.5px;
 }
-
+.info-sub{
+  margin: 20px 0 32px;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
 .top-container .info-buttons{
     display: flex;
 }
@@ -1038,6 +1044,60 @@ Función agregada para quitar el subrayao de las etiquetas a
   100% {
       box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #7e22ce, 0 0 40px #7e22ce;
   }
+}
+.phone-video-container {
+  width: 600px; /* Ancho del "celular" */
+  height: 640px; /* Alto del "celular" */
+  border-radius: 20px; /* Bordes redondeados para simular un celular */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra para dar efecto de profundidad */
+  overflow: hidden; /* Esconde cualquier contenido que se salga del contenedor */
+  position: relative; /* Posición relativa para alineación */
+}
+
+.phone-video-container video {
+  width: 100%; /* Ajustar el video al ancho del contenedor */
+  height: 100%; /* Ajustar el video a la altura del contenedor */
+  object-fit: cover; /* Cubrir todo el espacio del contenedor sin perder las proporciones */
+}
+
+.background-section {
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: space-around; /* Espacia el texto y el video */
+}
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-container, .video-container {
+  width: 50%;
+}
+
+.info-video {
+  width: 95%; /* Ajusta el tamaño del video al contenedor */
+  height: auto; /* Mantiene la proporción */
+}
+
+.background-section {
+  background: url('background-image.jpg'); /* Ajusta con tu imagen de fondo */
+  background-size: cover;
+  padding: 20px;
+  color: white;
+}
+
+.info-sub {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.info-text {
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 
