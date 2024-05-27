@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         height: 550,
         gridSize: 1,
         background: {
-            image: 'image.png', // Reemplaza con la URL del mapa de La Paz
+            image: 'image.png', // Ruta de la imagen del mapa
             size: 'contain' // Ajusta el tamaño de la imagen para que se contenga dentro del contenedor
         },
         interactive: function(cellView) {
@@ -91,6 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     paper.on('blank:pointerdown', function(evt, x, y) {
         if (modoEdicion) {
+            // Coordenadas del área del aeropuerto (ajusta estos valores según la imagen)
+            var airportArea = { x1: 300, y1: 200, x2: 570, y2: 240 };
+            if (x >= airportArea.x1 && x <= airportArea.x2 && y >= airportArea.y1 && y <= airportArea.y2) {
+                alert("No se pueden colocar nodos en el área del aeropuerto.");
+                return;
+            }
             var nodeName = prompt("Ingrese el nombre del nodo:");
             if (nodeName) {
                 createNode(x, y, nodeName);
