@@ -5,11 +5,10 @@ html, body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #252954; /* Establece el color de fondo de toda la página */
+    background-color: #f5f5dc; /* Color de fondo blanco hueso */
 }
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,12 +20,11 @@ html, body {
     bottom: 80px;
     right: 280px;
     width: 500px;
-    background: linear-gradient(95deg, #6bcff4 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%); /* Degradado de rojo medio oscuro a verde oscuro */
     color: white;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     padding: 20px;
     border-radius: 10px;
-    /* Quitar 'display: none;' para que sea visible desde el inicio */
     z-index: 1;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -41,27 +39,27 @@ html, body {
     display: flex;
     text-align: center;
     align-items: center;
-    flex-direction: column; /* Organiza los botones en columna */
-    margin-right: 10px; /* Espacio entre los botones y el gráfico */
+    flex-direction: column;
+    margin-right: 10px;
 }
 
 .buttons-container button {
-    margin-bottom: 5px; /* Espacio entre los botones */
+    margin-bottom: 5px;
 }
 
 .buttons-container label, #cambiarColorBtn, #cambiarColorTextoBtn, #cambiarColorAristaBtn {
-    margin-left: 10px; /* Espacio entre los botones */
+    margin-left: 10px;
 }
 
 .buttons-container #cambiarColorBtn, #cambiarColorTextoBtn, #cambiarColorAristaBtn {
-    margin-bottom: 5px; /* Espacio entre los botones */
+    margin-bottom: 5px;
 }
 
 .graph-and-info-container {
-    width: calc(100% - 200px); /* Asumiendo que el contenedor de botones es de 200px de ancho */
+    width: calc(100% - 200px);
     display: flex;
-    flex-direction: column; /* Organiza el gráfico y la información en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
+    flex-direction: column;
+    align-items: center;
 }
 
 #graficoContainer {
@@ -73,10 +71,9 @@ html, body {
 
 #contenedor-general {
     display: flex;
-    align-items: flex-start; /* Para alinear los elementos en la parte superior */
+    align-items: flex-start;
 }
 
-/* Estilo básico para el interruptor */
 .switch {
     position: relative;
     display: inline-block;
@@ -85,14 +82,12 @@ html, body {
     margin-bottom: 5px;
 }
 
-/* Estilo para esconder el checkbox, pero sigue siendo accesible */
 .switch input { 
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* Estilo para el deslizador */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -118,11 +113,11 @@ html, body {
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #006400;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #006400;
 }
 
 input:checked + .slider:before {
@@ -131,7 +126,6 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-/* Estilo redondeado para el deslizador */
 .slider.round {
     border-radius: 34px;
 }
@@ -140,11 +134,11 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-#text{
+#text {
     font-size: 11px;
     letter-spacing: -1px;
     color: #fff;
-    background-color: #555;
+    background-color: #006400;
     border-radius: 18px;
     width: 100%;
     align-self: center;
@@ -156,21 +150,22 @@ input:checked + .slider:before {
     position: absolute;
     width: 30px;
     height: 30px;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     cursor: pointer;
-    z-index: 1; /* Ajusta el valor según sea necesario */
+    z-index: 1;
 }
+
 .flecha {
     position: absolute;
     border: 2px solid white;
     transform-origin: 0 10%;
     pointer-events: none;
-    z-index: 0; /* Ajusta el valor según sea necesario */
+    z-index: 0;
 }
 
 .flecha::after {
@@ -179,60 +174,54 @@ input:checked + .slider:before {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 8px 0 8px 14px; /* Ajusta según sea necesario para el tamaño del triángulo */
-    border-color: transparent transparent transparent white; /* Ajusta el color según tus preferencias */
-    top: -9.4px; /* Ajusta según sea necesario para la posición del triángulo */
+    border-width: 8px 0 8px 14px;
+    border-color: transparent transparent transparent white;
+    top: -9.4px;
     right: 14px;
-    z-index: 0; /* Un valor mayor que el z-index del nodo */
+    z-index: 0;
 }
 
-
-
-/*
-Estilos agregados desde style.css
-*/
-
-.main{
-    width: 100%; /* Ocupa el 100% del ancho de body */
-    height: 100%; /* Ocupa el 100% de la altura de body */
+.main {
+    width: 100%;
+    height: 100%;
     padding: 0 88px;
     position: relative;
     overflow-x: hidden;
-    background-color: #221f2f;
+    background-color: #f5f5dc; /* Color de fondo blanco hueso */
     display: flex;
     flex-direction: column;
 }
 
-.main::before{
+.main::before {
     content: "";
     position: absolute;
     width: 120px;
     height: 120px;
     left: 55%;
     top: 20%;
-    background-color: #ed2ff0;
+    background-color: #b22222; /* Rojo medio oscuro */
     filter: blur(90px);
 }
 
-.main::after{
+.main::after {
     content: "";
     position: absolute;
     width: 120px;
     height: 120px;
     left: 80%;
     top: 44%;
-    background-color: #22a8cd;
+    background-color: #006400; /* Verde oscuro */
     filter: blur(90px);
 }
 
-.main .navbar{
+.main .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
 }
 
-.navbar .toggler{
+.navbar .toggler {
     font-size: 2rem;
     color: #c5c3c3;
     background-color: transparent;
@@ -241,23 +230,23 @@ Estilos agregados desde style.css
     display: none;
 }
 
-.navbar .nav-btn{
+.navbar .nav-btn {
     cursor: pointer;
     background-color: transparent;
     border: none;
     width: 90px;
     height: 40px;
-    color: #ccc;
+    color: #b22222;
     font-size: 12px;
 }
 
-.navbar .nav-btn.selected{
-    border: 2px solid #ccc;
+.navbar .nav-btn.selected {
+    border: 2px solid #b22222;
     border-radius: 50px;
 }
 
-.navbar .logo{
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+.navbar .logo {
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -265,49 +254,49 @@ Estilos agregados desde style.css
     font-size: 32px;
 }
 
-.navbar .item{
+.navbar .item {
     font-size: 13px;
     color: #ccc;
     cursor: pointer;
 }
 
-.navbar .item.selected{
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+.navbar .item.selected {
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-bottom: 1px solid #7e22ce;
+    border-bottom: 1px solid #b22222;
 }
 
-.navbar .item.inactive{
+.navbar .item.inactive {
     background: linear-gradient(95deg, #eaddf5 3.2%, #eaddf5 99.5%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.navbar .item:not(:last-child){
+.navbar .item:not(:last-child) {
     margin-right: 20px;
 }
 
-.navbar .nav-buttons.active{
+.navbar .nav-buttons.active {
     transition: all 0.3s ease;
     opacity: 1;
 }
 
-.main .top-container{
+.main .top-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10rem;
 }
 
-.top-container .info-box{
+.top-container .info-box {
     max-width: 50%;
     animation: toRight 0.8s;
 }
 
-.top-container .header{
+.top-container .header {
     margin: 0;
     color: #fff;
     font-size: 2.4rem;
@@ -315,7 +304,7 @@ Estilos agregados desde style.css
     line-height: 55px;
 }
 
-.top-container .info-text{
+.top-container .info-text {
     margin: 20px 0 32px;
     color: #fff;
     font-size: 16px;
@@ -323,11 +312,11 @@ Estilos agregados desde style.css
     letter-spacing: 0.5px;
 }
 
-.top-container .info-buttons{
+.top-container .info-buttons {
     display: flex;
 }
 
-.top-container .info-btn{
+.top-container .info-btn {
     cursor: pointer;
     padding: 8px 38px;
     border-radius: 16px;
@@ -337,18 +326,18 @@ Estilos agregados desde style.css
     color: #fff;
 }
 
-.top-container .info-btn.nav-btn{
+.top-container .info-btn.nav-btn {
     margin-left: 20px;
     background-color: transparent;
     border: 1px solid #fff;
 }
 
-.top-container .info-btn.selected{
+.top-container .info-btn.selected {
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
 }
 
-.top-container .nft-box{
+.top-container .nft-box {
     padding: 16px;
     border: 1px solid #000;
     background: linear-gradient(170deg, rgba(52, 93, 129, 0.08) 1.85%, rgba(57, 46, 75, 0.08) 98%);
@@ -356,21 +345,21 @@ Estilos agregados desde style.css
     animation: toLeft 0.8s;
 }
 
-.top-container .nft-pic{
+.top-container .nft-pic {
     object-fit: cover;
     width: 300px;
     height: 300px;
     border-radius: 1.6rem;
 }
 
-.top-container .nft-box .nft-content{
+.top-container .nft-box .nft-content {
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-top: 10px;
 }
 
-.top-container .nft-box .info, .top-container .nft-box .likes{
+.top-container .nft-box .info, .top-container .nft-box .likes {
     display: flex;
     align-items: center;
     color: #fff;
@@ -378,7 +367,7 @@ Estilos agregados desde style.css
     font-size: 12px;
 }
 
-.top-container .nft-box .info-img{
+.top-container .nft-box .info-img {
     object-fit: cover;
     flex-shrink: 0;
     width: 30px;
@@ -387,24 +376,24 @@ Estilos agregados desde style.css
     margin-right: 10px;
 }
 
-.top-container .nft-box .likes .icon-box{
+.top-container .nft-box .likes .icon-box {
     display: flex;
     align-items: center;
     font-size: 15px;
 }
 
-.top-container .nft-box .likes .icon-box .bx{
+.top-container .nft-box .likes .icon-box .bx {
     font-size: 30px;
     margin-right: 8px;
 }
 
-.get-started{
+.get-started {
     margin-top: 10rem;
     display: flex;
     flex-direction: column;
 }
 
-.get-started .header{
+.get-started .header {
     align-self: center;
     color: #fff;
     font-weight: 500;
@@ -412,7 +401,7 @@ Estilos agregados desde style.css
     line-height: 72px;
 }
 
-.get-started .info-text{
+.get-started .info-text {
     align-self: center;
     color: #ccc;
     font-weight: 400;
@@ -421,7 +410,7 @@ Estilos agregados desde style.css
     letter-spacing: 0.5px;
 }
 
-.get-started .items-box{
+.get-started .items-box {
     padding: 60px 80px;
     position: relative;
     display: grid;
@@ -431,17 +420,17 @@ Estilos agregados desde style.css
     justify-content: space-around;
 }
 
-.get-started .items-box:before{
+.get-started .items-box:before {
     content: "";
     position: absolute;
     width: 100%;
     height: 120px;
     top: 80px;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     filter: blur(140px);
 }
 
-.get-started .items-box .item-container p{
+.get-started .items-box .item-container p {
     width: 100px;
     margin-top: 12px;
     text-align: center;
@@ -449,7 +438,7 @@ Estilos agregados desde style.css
     color: #fff;
 }
 
-.get-started .items-box .item-container .item{
+.get-started .items-box .item-container .item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -462,24 +451,24 @@ Estilos agregados desde style.css
     backdrop-filter: blur(90px);
 }
 
-.get-started .items-box .item-container .item .bx{
+.get-started .items-box .item-container .item .bx {
     font-size: 38px;
     color: #eee;
 }
 
-.main .footer{
+.main .footer {
     margin: 50px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.main .copyright{
+.main .copyright {
     padding-bottom: 25px;
     border-top: 1px solid #ccc;
 }
 
-.main .footer .footer-header{
+.main .footer .footer-header {
     max-width: 50%;
     font-weight: 500;
     font-size: 30px;
@@ -487,89 +476,89 @@ Estilos agregados desde style.css
     color: #fff;
 }
 
-.main .footer .footer-links{
+.main .footer .footer-links {
     display: flex;
 }
 
-.main .footer .footer-links .link{
+.main .footer .footer-links .link {
     margin-left: 70px;
 }
 
-.main .footer .footer-links .link h5{
+.main .footer .footer-links .link h5 {
     font-weight: 400;
     font-size: 20px;
     line-height: 40px;
     color: #fff;
 }
 
-.main .footer .footer-links .link p{
+.main .footer .footer-links .link p {
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.05em;
     color: #ccc;
 }
 
-.copyright p{
+.copyright p {
     font-size: 12px;
     line-height: 36px;
     color: #afafaf;
 }
 
 @media screen and (max-width: 1040px) {
-    .top-container{
+    .top-container {
         flex-direction: column;
     }
 
-    .top-container .info-box{
+    .top-container .info-box {
         max-width: none;
         margin: 60px 0;
     }
 
-    .top-container .nft-box{
+    .top-container .nft-box {
         display: none;
     }
 
-    .main .footer{
+    .main .footer {
         flex-direction: column;
     }
 
-    .main .footer .footer-header{
+    .main .footer .footer-header {
         max-width: 80%;
         margin-bottom: 30px;
         text-align: center;
     }
 
-    .main .footer .footer-links .link:first-child{
+    .main .footer .footer-links .link:first-child {
         margin: 0;
     }
 }
 
 @media screen and (max-width: 925px) {
-    .navbar .nav-links{
+    .navbar .nav-links {
         display: none;
     }
 
-    .navbar .nav-buttons{
+    .navbar .nav-buttons {
         opacity: 0;
     }
 
-    .navbar .toggler{
+    .navbar .toggler {
         display: flex !important;
         align-items: center;
     }
 
-    .get-started .info-text{
+    .get-started .info-text {
         text-align: center;
     }
 
-    .get-started .items-box{
+    .get-started .items-box {
         display: grid;
         grid-template-columns: auto auto;
         justify-content: space-evenly;
         padding: 50px 0;
     }
 
-    .get-started .items-box:before{
+    .get-started .items-box:before {
         height: 200px;
         top: 90px;
         filter: blur(120px);
@@ -577,17 +566,17 @@ Estilos agregados desde style.css
 }
 
 @media screen and (max-width: 700px) {
-    .top-container{
+    .top-container {
         margin-top: 4rem !important;
     }
 
-    .top-container .info-box{
+    .top-container .info-box {
         max-height: none;
         max-width: none;
         margin-bottom: 4rem;
     }
 
-    .top-container .nft-box{
+    .top-container .nft-box {
         display: block;
         max-width: none;
         max-height: none;
@@ -595,11 +584,11 @@ Estilos agregados desde style.css
 }
 
 @media screen and (max-width: 600px) {
-    .main{
+    .main {
         padding: 0 40px;
     }
 
-    .footer .footer-header{
+    .footer .footer-header {
         font-size: 20px;
         line-height: 30px;
         max-width: 100%;
@@ -607,57 +596,59 @@ Estilos agregados desde style.css
         text-align: center;
     }
 
-    .footer .footer-links{
+    .footer .footer-links {
         justify-content: space-between;
         width: 100%;
     }
 
-    .footer .footer-links .link{
+    .footer .footer-links .link {
         margin-left: 20px;
     }
 
-    .footer .footer-links .link h5{
+    .footer .footer-links .link h5 {
         font-size: 15px;
         line-height: 35px;
     }
 
-    .footer .footer-links .link p{
+    .footer .footer-links .link p {
         font-size: 11px;
         line-height: 18px;
     }
 }
 
-@keyframes toRight{
-    from{
+@keyframes toRight {
+    from {
         transform: translateX(-700px);
     }
-    to{
+    to {
         transform: translateX(0px);
     }
 }
 
-@keyframes toLeft{
-    from{
+@keyframes toLeft {
+    from {
         transform: translateX(550px);
     }
-    to{
+    to {
         transform: translateX(0px);
     }
 }
 
-h2.separator{
+h2.separator {
     padding: 0 80px;
     font-size: 40px;
     margin-top: 40px;
 }
-.sl-nft{
+
+.sl-nft {
     padding: 0 80px;
     margin: 50px 0 80px;
     display: flex;
     justify-content: space-between;
     gap: 30px;
 }
-.sl-nft .item{
+
+.sl-nft .item {
     padding: 20px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 18px;
@@ -665,40 +656,32 @@ h2.separator{
     transition: all 0.3s ease;
 }
 
-.sl-nft .item:hover{
+.sl-nft .item:hover {
     box-shadow: none;  
 }
 
-.sl-nft .item .header{
+.sl-nft .item .header {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.sl-nft .item .header i{
+
+.sl-nft .item .header i {
     font-size: 40px;
 }
 
-.sl-nft .item .header h5{
+.sl-nft .item .header h5 {
     font-size: 18px;
 }
 
-.sl-nft .item p{
+.sl-nft .item p {
     margin-top: 10px;
     padding: 0 4px;
-
 }
-/*
-Función agregada para quitar el subrayao de las etiquetas a
-*/
 
 .nav-buttons a {
-    text-decoration: none; /* Elimina la decoración del enlace */
+    text-decoration: none;
 }
-
-
-/*
-Estilo de botón HELP
-*/
 
 #helpBtn {
     position: fixed;
@@ -711,7 +694,7 @@ Estilo de botón HELP
     line-height: 50px;
     text-align: center;
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     color: white;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
@@ -729,7 +712,7 @@ Estilo de botón HELP
     bottom: 80px;
     left: 20px;
     width: 300px;
-    background-color: #252954;
+    background-color: #b22222; /* Rojo medio oscuro */
     color: white;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     padding: 20px;
@@ -742,7 +725,7 @@ Estilo de botón HELP
     display: none;
 }
 
-#cargarBtn{
+#cargarBtn {
     margin-top: 5px;
     margin-left: 10px;
     margin-bottom: 10px;
@@ -754,11 +737,11 @@ Estilo de botón HELP
     letter-spacing: -1px;
     color: #fff;
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     font-family: 'Poppins', sans-serif;
 }
 
-#guardarBtn, #exportPNG, #exportPDF, #exportJSON{
+#guardarBtn, #exportPNG, #exportPDF, #exportJSON {
     cursor: pointer;
     margin-top: 5px;
     margin-left: 10px;
@@ -769,11 +752,11 @@ Estilo de botón HELP
     letter-spacing: -1px;
     color: #fff;
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     font-family: 'Poppins', sans-serif;
 }
 
-#limpiarBtn{
+#limpiarBtn {
     cursor: pointer;
     margin-top: 5px;
     margin-left: 10px;
@@ -784,11 +767,11 @@ Estilo de botón HELP
     letter-spacing: -1px;
     color: #fff;
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     font-family: 'Poppins', sans-serif;
 }
 
-#eliminarBtn{
+#eliminarBtn {
     cursor: pointer;
     margin-top: 5px;
     margin-left: 10px;
@@ -799,11 +782,11 @@ Estilo de botón HELP
     letter-spacing: -1px;
     color: #fff;
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     font-family: 'Poppins', sans-serif;
 }
 
-#solMinBtn, #solMaxBtn, #aplicarColorSolucion, #volverColorOrig{
+#solMinBtn, #solMaxBtn, #aplicarColorSolucion, #volverColorOrig {
     cursor: pointer;
     margin-top: 5px;
     margin-left: 10px;
@@ -814,29 +797,25 @@ Estilo de botón HELP
     letter-spacing: -1px;
     color: #fff;
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     font-family: 'Poppins', sans-serif;
 }
 
 .atributo-text {
     color: white;
-    /* Otros estilos necesarios para posicionar y mostrar correctamente el texto del atributo */
 }
 
-.atributo-text {
-    color: white;
-    /* Otros estilos necesarios para posicionar y mostrar correctamente el texto del atributo */
-}
 .tooltip {
-    background-color: #252954; /* Color de fondo como el cuadro de ayuda */
+    background-color: #b22222; /* Color de fondo rojo medio oscuro */
     color: white; /* Texto en color blanco */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     position: absolute;
-    z-index: 1000; /* Asegura que el tooltip esté por encima de otros elementos */
-    width: 300px; /* O ajusta según la necesidad */
+    z-index: 1000;
+    width: 300px;
 }
+
 .tooltip button {
     cursor: pointer;
     padding: 8px 38px;
@@ -846,31 +825,21 @@ Estilo de botón HELP
     letter-spacing: -1px;
     color: #fff;
     border: none;
-    background: linear-gradient(95deg, #7e22ce 3.2%, #3b82f6 99.5%);
+    background: linear-gradient(95deg, #b22222 3.2%, #006400 99.5%);
     font-family: 'Poppins', sans-serif;
     margin-top: 15px;
 }
+
 .tooltip button:not(:last-child) {
     margin-right: 10px;
 }
+
 .resaltar {
-    outline: 2px solid #f2eff5; /* Añade un contorno para resaltar */
+    outline: 2px solid #f2eff5;
     outline-offset: 2px;
-    box-shadow: 0 0 8px #f4f3f6; /* Añade un resplandor para mayor visibilidad */
+    box-shadow: 0 0 8px #f4f3f6;
     z-index: 100000;
 }
-
-.tooltip button {
-    display: inline-block;
-    margin: 5px;
-    font-size: 16px;
-}
-/* Ajusta estos estilos según la librería de iconos que uses */
-.anterior-icono, .siguiente-icono, .finalizar-icono {
-    display: inline-block;
-    margin-right: 8px;
-}
-/* Estilos adicionales para los botones, si es necesario */
 
 #capaDesenfoque {
     position: fixed;
@@ -878,29 +847,30 @@ Estilo de botón HELP
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5); /* Usa un color de fondo semitransparente si deseas oscurecer el fondo junto con el desenfoque */
-    z-index: 999; /* Asegúrate de que esto sea menor que el z-index de .tooltip y .resaltar */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
     backdrop-filter: blur(4px);
 }
 
 .tooltip, .resaltar {
-    z-index: 10000; /* Mayor que el z-index de #capaDesenfoque para asegurar que se muestren por encima */
+    z-index: 10000;
 }
+
 #botonVideo {
     position: absolute;
-    right: -10px; /* Ajusta este valor para mover horizontalmente */
-    top: -20px; /* Ajusta este valor para mover verticalmente */
-    z-index: 1007; /* Asegúrate de que esté por encima del tooltip */
+    right: -10px;
+    top: -20px;
+    z-index: 1007;
     cursor: pointer;
-    background-color: #7e22ce; /* Color de fondo */
-    border-radius: 50%; /* Botón redondo */
-    padding: 10px; /* Tamaño del botón */
-    border: none; /* Sin borde */
-    outline: none; /* Sin resplandor al hacer clic */
-    display: flex; /* Centrar el ícono dentro del botón */
+    background-color: #b22222;
+    border-radius: 50%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 15px #7e22ce; /* Sombra para efecto resplandeciente */
+    box-shadow: 0 0 15px #b22222;
 }
 
 .boton-resplandor {
@@ -909,9 +879,9 @@ Estilo de botón HELP
 
 @keyframes resplandor {
     0% {
-        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #7e22ce, 0 0 20px #7e22ce;
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #b22222, 0 0 20px #b22222;
     }
     100% {
-        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #7e22ce, 0 0 40px #7e22ce;
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #b22222, 0 0 40px #b22222;
     }
 }
