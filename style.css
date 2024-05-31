@@ -531,12 +531,16 @@ h2.separator {
     width: 100%;
     position: relative;
     overflow: hidden;
+    height: 320px;
+    padding: 0px;
 }
 
 .video-container iframe {
-    display: block; /* Elimina cualquier espacio extra abajo del iframe */
-    width: 100%;
-    height: auto;
+    display: block; /* Elimina cualquier espacio extra abajo del iframe */    
+    width: 480px;
+    height: 330px;
+    padding: 30px;
+
 }
 
 /* Función agregada para quitar el subrayao de las etiquetas a */
