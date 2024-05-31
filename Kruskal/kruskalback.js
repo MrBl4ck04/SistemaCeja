@@ -196,6 +196,10 @@ document.addEventListener('DOMContentLoaded', function() {
         calcularKruskal();
     });
 
+    document.getElementById('direccionBtn').addEventListener('click', function() {
+        window.location.href = 'https://www.google.com/maps/place/Distribuidor+Vial+Ceja/@-16.5043619,-68.1649087,17.75z/data=!4m14!1m7!3m6!1s0x915edfad500264a3:0xd57a8a6cf6dc4526!2sEl+Alto+International+Airport!8m2!3d-16.5094725!4d-68.1760585!16zL20vMDdydHp3!3m5!1s0x915edf6ec6b7563d:0xbc7e5a08cc7ebced!8m2!3d-16.5036467!4d-68.1626384!16s%2Fg%2F11rz2kltnr!5m1!1e1?entry=ttu';
+    });
+
     function calcularKruskal() {
         var edges = Object.values(graph.getLinks());
         edges.sort((a, b) => a.labels()[0].attrs.text.text - b.labels()[0].attrs.text.text);

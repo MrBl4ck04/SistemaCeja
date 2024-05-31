@@ -741,7 +741,7 @@ h2.separator {
     font-family: 'Poppins', sans-serif;
 }
 
-#guardarBtn, #exportPNG, #exportPDF, #exportJSON {
+#guardarBtn, #direccionBtn, #exportPNG, #exportPDF, #exportJSON {
     cursor: pointer;
     margin-top: 5px;
     margin-left: 10px;
