@@ -269,14 +269,13 @@ document.addEventListener('DOMContentLoaded', function() {
         resultadoContainer.textContent = maxEdges.map(edge => edge.labels()[0].attrs.text.text).join('+') + '=' + sum;
     
         maxEdges.forEach(edge => {
-            edge.attr('line/stroke', '#FF0000');
+            edge.attr('line/stroke', '#fdff00');
             edge.attr('line/strokeWidth', 4);
         });
     
         paper.selectedEdges = maxEdges;
     }
 
-    /*
     document.getElementById('solMaxBtn').addEventListener('click', function() {
         restaurarColoresOriginales();
         var nodes = Object.values(graph.getElements());
@@ -291,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
         maximizarKruskal();
-    });*/
+    });
 
     document.getElementById('guardarBtn').addEventListener('click', function() {
         var nombreArchivo = prompt("Ingrese el nombre del archivo:");
